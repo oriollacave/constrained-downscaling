@@ -52,12 +52,12 @@ for i in "${!SUBFOLDERS[@]}"; do
 done
 echo "Merge train files"
 # Merge training data along the time dimension
-python3 merge_pt.py $TRAIN_DIR
-python3 merge_pt.py $TEST_DIR
-python3 merge_pt.py $VAL_DIR
 
+python3 merge_pt.py $OUTPUT_DIR train
+python3 merge_pt.py $OUTPUT_DIR val
+python3 merge_pt.py $OUTPUT_DIR test
 
-exit 1
+exit
 mv output/train/d04_train_merged.pt output/train/input_train.pt
 mv output/train/d05_train_merged.pt output/train/target_train.pt
 rm output/train/d0*pt
