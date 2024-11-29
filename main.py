@@ -1,4 +1,5 @@
 from training import run_training
+from training import evaluate_model
 from utils import load_data
 import numpy as np
 import argparse
@@ -37,8 +38,10 @@ def main(args):
         data = load_data(args)
         #run training
         run_training(args, data)    
-    else:       
+    else:
+        print("Evaluate model")
         data = load_data(args)
+        print(data)
         #run training
         evaluate_model(data, args)
         
